@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2</title>
+    <!-- CSS no mesmo arquivo -->
+    <style>
+        * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+
+            body {
+              min-height: 100vh;
+              background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+              overflow: hidden;
+            }
+
+            .stars {
+              width: 1px;
+              height: 1px;
+              position: absolute;
+              background: white;
+              box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+                22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+                38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+                53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+                68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+                83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+                98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
+                18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
+                35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
+                50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
+                65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
+                80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
+                95vw 75vh 2px white;
+              animation: twinkle 8s infinite linear;
+            }
+
+            .shooting-star {
+              position: absolute;
+              width: 100px;
+              height: 2px;
+              background: linear-gradient(90deg, white, transparent);
+              animation: shoot 3s infinite ease-in;
+            }
+
+            .shooting-star:nth-child(1) {
+              top: 20%;
+              left: -100px;
+              animation-delay: 0s;
+            }
+
+            .shooting-star:nth-child(2) {
+              top: 35%;
+              left: -100px;
+              animation-delay: 1s;
+            }
+
+            .shooting-star:nth-child(3) {
+              top: 50%;
+              left: -100px;
+              animation-delay: 2s;
+            }
+
+            @keyframes twinkle {
+              0%,
+              100% {
+                opacity: 0.8;
+              }
+              50% {
+                opacity: 0.4;
+              }
+            }
+
+            @keyframes shoot {
+              0% {
+                transform: translateX(0) translateY(0) rotate(25deg);
+                opacity: 1;
+              }
+              100% {
+                transform: translateX(120vw) translateY(50vh) rotate(25deg);
+                opacity: 0;
+              }
+            }
+
+            /* Additional twinkling stars with different animation timing */
+            .stars::after {
+              content: "";
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              background: white;
+              box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+                33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
+                57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
+                81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
+                3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
+                27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
+                51vw 92vh 2px white, 59vw 78vh 1px white;
+              animation: twinkle 6s infinite linear reverse;
+        }
+        
+        .doris {
+            background: blue;
+            font-family: comic sans ms;
+            border: 3px dotted greenyellow;
+            max-width: 500px;
+            /* Centralizar */
+            margin: 0 auto;
+            text-align: center;
+            /* Espaçamento entre os elementos */
+            padding: 20px;
+        }
+
+        .titulo {
+            color: #ffffff;
+            font-size: 50px;
+            text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #fff,
+            0 0 82px #fff,
+            0 0 92px #fff,
+            0 0 102px #fff,
+            0 0 151px #fff;
+        }
+
+        .rod {
+            color: yellowgreen;
+            font-size: 25px;
+            font-family: wingdings;
+            background-color: aquamarine;
+            border: 3px solid #4f9e84;
+            border-radius: 10px;
+            text-shadow:
+            0 0 7px #4f9e84,
+            0 0 10px #4f9e84,
+            0 0 21px #4f9e84,
+            0 0 42px #4f9e84,
+            0 0 82px #4f9e84,
+            0 0 92px #4f9e84,
+            0 0 102px #4f9e84,
+            0 0 151px #4f9e84;
+        }
+
+        .corin {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 5px 5px 0 #ff0000, 10px 10px 0 #000000;
+            animation: shadow-dance 2s infinite;
+            font-family: papyrus;
+        }
+
+        @keyframes shadow-dance {
+            0%, 100% {
+                text-shadow: 5px 5px 0 #ff0000, 10px 10px 0 #000000;
+            }
+            50% {
+                text-shadow: -5px -5px 0 #000000, -10px -10px 0 #ff0000;
+            }
+        }
+
+        .gabs {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+            animation: glow 1.5s infinite alternate;
+            font-family: dracula;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #ff005e, 0 0 10px #ffa600, 0 0 20px #fffb00, 0 0 40px #00ff0d, 0 0 80px #0099ff;
+            }
+            100% {
+                text-shadow: 0 0 10px #0099ff, 0 0 20px #00ff0d, 0 0 40px #fffb00, 0 0 80px #ffa600, 0 0 160px #ff005e;
+            }
+        }
+
+        .bb {
+            display: inline-block;
+            font-size: 4rem;
+            animation: wave 2s ease-in-out infinite;
+            color: #ffd900;
+        }
+
+        .wave-text h5:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .wave-text h5:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .wave-text h5:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        .wave-text h5:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+    @keyframes wave {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    .batman {
+        font-family: batman;
+        font-size: 40px;
+    }
+    </style>
+</head>
+<body>
+    <div class="doris">
+        <h1 class="titulo">Test 2</h1>
+        <h2 class="rod">Rodriguinho</h2>
+        <h3 class="corin">Corinthians</h3>
+        <h4 class="gabs">Gabanna</h4>
+        <h5 class="bb">Bruno</h5>
+        <h6 class="batman">Batman</h6>
+    </div>
+    <div class="stars"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+</body>
+</html>
