@@ -6,101 +6,34 @@
     <title>test2</title>
     <!-- CSS no mesmo arquivo -->
     <style>
-        * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-            }
+        html {
+          --s: 140px; /* control the size */
+          --c1: #AB3E5B;
+          --c2: #FFBE40;
 
-            body {
-              min-height: 100vh;
-              background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
-              overflow: hidden;
-            }
+          --_g: 
+            #0000 25%,#0008 47%,var(--c1)  53% 147%,var(--c2) 153% 247%,
+            var(--c1) 253% 347%,var(--c2) 353% 447%,var(--c1) 453% 547%,#0008 553%,#0000 575%;
+          --_s: calc(25%/3) calc(25%/4) at 50%; 
+          background:
+            radial-gradient(var(--_s) 100%,var(--_g)),
+            radial-gradient(var(--_s) 100%,var(--_g)) calc(var(--s)/2) calc(3*var(--s)/4),
+            radial-gradient(var(--_s) 0   ,var(--_g)) calc(var(--s)/2) 0,
+            radial-gradient(var(--_s) 0   ,var(--_g)) 0                calc(3*var(--s)/4),
+            repeating-linear-gradient(90deg,#ACCEC0 calc(25%/-6) calc(25%/6),#61A6AB 0 calc(25%/2));
+          background-size: var(--s) calc(3*var(--s)/2);
+          animation: m 2.5s infinite linear;
+        } 
 
-            .stars {
-              width: 1px;
-              height: 1px;
-              position: absolute;
-              background: white;
-              box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
-                22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
-                38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
-                53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
-                68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
-                83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
-                98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
-                18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
-                35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
-                50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
-                65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
-                80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
-                95vw 75vh 2px white;
-              animation: twinkle 8s infinite linear;
-            }
-
-            .shooting-star {
-              position: absolute;
-              width: 100px;
-              height: 2px;
-              background: linear-gradient(90deg, white, transparent);
-              animation: shoot 3s infinite ease-in;
-            }
-
-            .shooting-star:nth-child(1) {
-              top: 20%;
-              left: -100px;
-              animation-delay: 0s;
-            }
-
-            .shooting-star:nth-child(2) {
-              top: 35%;
-              left: -100px;
-              animation-delay: 1s;
-            }
-
-            .shooting-star:nth-child(3) {
-              top: 50%;
-              left: -100px;
-              animation-delay: 2s;
-            }
-
-            @keyframes twinkle {
-              0%,
-              100% {
-                opacity: 0.8;
-              }
-              50% {
-                opacity: 0.4;
-              }
-            }
-
-            @keyframes shoot {
-              0% {
-                transform: translateX(0) translateY(0) rotate(25deg);
-                opacity: 1;
-              }
-              100% {
-                transform: translateX(120vw) translateY(50vh) rotate(25deg);
-                opacity: 0;
-              }
-            }
-
-            /* Additional twinkling stars with different animation timing */
-            .stars::after {
-              content: "";
-              position: absolute;
-              width: 1px;
-              height: 1px;
-              background: white;
-              box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
-                33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
-                57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
-                81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
-                3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
-                27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
-                51vw 92vh 2px white, 59vw 78vh 1px white;
-              animation: twinkle 6s infinite linear reverse;
+        @keyframes m {
+          to {
+            background-position:
+              var(--s) 0,
+              calc(var(--s)/-2) calc(3*var(--s)/4),
+              calc(3*var(--s)/2) 0,
+              calc(-1*var(--s)) calc(3*var(--s)/4),
+              0 0
+          }
         }
         
         .doris {
@@ -214,6 +147,39 @@
         font-family: batman;
         font-size: 40px;
     }
+
+    .thigas {
+        display: block;
+        border: #00c70a 3px double;
+    }
+
+    .japa {
+        display: block;
+        border: #00fff2 3px dotted;
+    }
+
+    .gi {
+        display: block;
+        border: #ffe600 3px solid;
+    }
+
+    svg{
+        background-image: url(./img/img-1.jpg);
+        background-size:cover;
+        width:200px; height:200px;
+        display:block;
+        margin:3vmin auto;
+    }
+    text{
+        font-size:10px;
+        transition:font-size .4s ease-out;
+        font-weight:900;
+        font-family:arial;
+    }
+    svg:hover text{
+        transition:font-size .4s ease-in;
+        font-size: 300px;
+    }
     </style>
 </head>
 <body>
@@ -224,12 +190,23 @@
         <h4 class="gabs">Gabanna</h4>
         <h5 class="bb">Bruno</h5>
         <h6 class="batman">Batman</h6>
+        <strong class="thigas">Thiago</strong>
+        <span class="japa">Yuji</span>
+        <small class="gi">Giovanni</small>
+        <br>
+
+        <svg viewbox="0 0 50 50" width="500" height="200">
+            <defs>
+                <mask id="mask" x="0" y="0" width="500" height="200">
+                    <rect x="0.5" y="0.5" width="500" height="200" fill="#fff"/>
+                    <text x="20" text-anchor="middle" y="50" dy="0">C</text>
+                    <text x="25" id="ltrV" text-anchor="middle" y="50" dy="0">A</text>
+                    <text x="30" text-anchor="middle" y="50" dy="0">T</text>
+                </mask>
+            </defs>
+            <rect x="0.5" y="0.5" width="500" height="200" mask="url(#mask)" fill-opacity="1" fill="#E3DFD2"/>
+        </svg>
+
     </div>
-    <div class="stars"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
 </body>
 </html>
