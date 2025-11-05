@@ -1,5 +1,6 @@
 body {
-    background: #854444;
+    background: url(../img/bg-site.jpg) no-repeat;
+    background-size: cover;
 }
 
 #container {
@@ -38,6 +39,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-button {
+.btn {
     cursor: pointer;
+    background: #487bda;
+    border-radius: 5px;
+    box-shadow: 5px 4px 3px #00285c;
 }
