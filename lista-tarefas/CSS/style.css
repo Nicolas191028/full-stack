@@ -1,0 +1,43 @@
+body {
+    background: #854444;
+}
+
+#container {
+    background: #445b85;
+    /* Largura da tela */
+    max-width: 400px;
+    /* Centralizar */
+    margin: 0 auto;
+    text-align: center;
+    border: #704485 5px solid;
+    border-radius: 15px;
+    /* Espaçamento dentro do elemento */
+    padding: 15px;
+}
+
+#container h1 {
+    color: #fff;
+    /* Espaçamento dentro do elemento */
+    padding: 15px;
+    /* Tamanho do texto */
+    font-size: 30px;
+    font-family: comic sans ms;
+}
+
+#tarefa {
+    border: #704485 3px dotted;
+    padding: 5px;
+    outline: none;
+    color: #ffffff;
+    cursor: text;
+    background: black;
+}
+
+#tarefa::placeholder {
+    color: rgb(107, 107, 107);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    cursor: pointer;
+}

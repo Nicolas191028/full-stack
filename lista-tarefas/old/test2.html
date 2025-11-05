@@ -8,8 +8,8 @@
     <style>
         html {
           --s: 140px; /* control the size */
-          --c1: #AB3E5B;
-          --c2: #FFBE40;
+          --c1: #3e71ab;
+          --c2: #ffffff;
 
           --_g: 
             #0000 25%,#0008 47%,var(--c1)  53% 147%,var(--c2) 153% 247%,
@@ -20,7 +20,7 @@
             radial-gradient(var(--_s) 100%,var(--_g)) calc(var(--s)/2) calc(3*var(--s)/4),
             radial-gradient(var(--_s) 0   ,var(--_g)) calc(var(--s)/2) 0,
             radial-gradient(var(--_s) 0   ,var(--_g)) 0                calc(3*var(--s)/4),
-            repeating-linear-gradient(90deg,#ACCEC0 calc(25%/-6) calc(25%/6),#61A6AB 0 calc(25%/2));
+            repeating-linear-gradient(90deg,#f1bd5b calc(25%/-6) calc(25%/6),#ab6161 0 calc(25%/2));
           background-size: var(--s) calc(3*var(--s)/2);
           animation: m 2.5s infinite linear;
         } 
@@ -35,14 +35,82 @@
               0 0
           }
         }
+
+        @property --a{
+          syntax: '<angle>';
+          inherits: true;
+          initial-value: 0deg;
+        }
+        @property --p {
+          syntax: '<percentage>';
+          inherits: true;
+          initial-value: 0%;
+        }
+        @property --c1 {
+          syntax: '<color>';
+          inherits: true;
+          initial-value: #000;
+        }
+        @property --c2 {
+          syntax: '<color>';
+          inherits: true;
+          initial-value: #000;
+        }
+
+        .doris {
+          --s: 80px;
+          --_g: #0000, var(--c1) 2deg calc(var(--a) - 2deg),#0000 var(--a);
+          background: 
+            conic-gradient(from calc(-45deg  - var(--a)/2) at top    var(--p) left  var(--p),var(--_g)),
+            conic-gradient(from calc(-45deg  - var(--a)/2) at top    var(--p) left  var(--p),var(--_g)),
+            conic-gradient(from calc( 45deg  - var(--a)/2) at top    var(--p) right var(--p),var(--_g)),
+            conic-gradient(from calc( 45deg  - var(--a)/2) at top    var(--p) right var(--p),var(--_g)),
+            conic-gradient(from calc(-135deg - var(--a)/2) at bottom var(--p) left  var(--p),var(--_g)),
+            conic-gradient(from calc(-135deg - var(--a)/2) at bottom var(--p) left  var(--p),var(--_g)),
+            conic-gradient(from calc( 135deg - var(--a)/2) at bottom var(--p) right var(--p),var(--_g)),
+            conic-gradient(from calc( 135deg - var(--a)/2) at bottom var(--p) right var(--p),var(--_g))
+            var(--c2);
+          background-size: calc(2*var(--s)) calc(2*var(--s));
+          animation: n 2s infinite alternate linear;
+        }
+
+        @keyframes n {
+          0%,15% {
+            --a: 135deg;
+            --p: 20%;
+            --c1: #3B8183;
+            --c2: #FAD089;
+            background-position: 0 0,var(--s) var(--s);
+          }
+          45%,50% {
+            --a: 90deg;
+            --p: 25%;
+            --c1: #3B8183;
+            --c2: #FAD089;
+            background-position: 0 0,var(--s) var(--s);
+          }
+          50.01%,55% {
+            --a: 90deg;
+            --p: 25%;
+            --c2: #3B8183;
+            --c1: #FAD089;
+            background-position: var(--s) 0,0 var(--s);
+          }
+          85%,100% {
+            --a: 135deg;
+            --p: 20%;
+            --c2: #3B8183;
+            --c1: #FAD089;
+            background-position: var(--s) 0,0 var(--s);
+          }
+        }
         
         .doris {
-            background: blue;
             font-family: comic sans ms;
             border: 3px dotted greenyellow;
             max-width: 500px;
             /* Centralizar */
-            margin: 0 auto;
+            margin: 0  auto;
             text-align: center;
             /* Espaçamento entre os elementos */
             padding: 20px;
@@ -86,6 +154,7 @@
             text-shadow: 5px 5px 0 #ff0000, 10px 10px 0 #000000;
             animation: shadow-dance 2s infinite;
             font-family: papyrus;
+            margin: 0  auto;
         }
 
         @keyframes shadow-dance {
@@ -103,6 +172,7 @@
             text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
             animation: glow 1.5s infinite alternate;
             font-family: dracula;
+            margin: 0  auto;
         }
 
         @keyframes glow {
@@ -119,6 +189,7 @@
             font-size: 4rem;
             animation: wave 2s ease-in-out infinite;
             color: #ffd900;
+            margin: 0  auto;
         }
 
         .wave-text h5:nth-child(1) {
@@ -146,6 +217,7 @@
     .batman {
         font-family: batman;
         font-size: 40px;
+        margin: 0  auto;
     }
 
     .thigas {
@@ -164,7 +236,7 @@
     }
 
     svg{
-        background-image: url(./img/img-1.jpg);
+        background-image: url(../img/img-1.jpg);
         background-size:cover;
         width:200px; height:200px;
         display:block;
