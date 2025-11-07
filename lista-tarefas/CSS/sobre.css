@@ -1,0 +1,102 @@
+/* body {
+    background: url(../img/bg-site.jpg) no-repeat;
+    background-size: cover;
+} */
+
+html {
+  height: 100%;
+  /* max-height: 600px; */
+  /* width: 1000px; */
+  background-color: hsla(200,40%,30%,.4);
+  background-image:   
+    url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png'),
+    url(../img/bg-site.jpg);
+  background-repeat: repeat-x;
+  background-position: 
+    0 0,
+    0 100%;
+  background-size: 
+    800px 520px,
+    cover;
+  animation: 50s para infinite linear;
+}
+
+@keyframes para {
+  100% {
+    background-position: 
+      400px 0,
+      10px 0;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    background: #b2fdf7;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container marquee {
+    padding: 10px;
+    color: #2ba8e2;
+    font-size: 35px;
+    font-family: comic sans ms;
+}
+
+.container p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.container h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #6d2323;
+}
+
+.container h3 {
+    text-decoration: underline;
+    color: #c1e2ff;
+    font-size: 30px;
+}
+
+.container ul li {
+    border:#c1e2ff 10px solid ;
+    background: #c1e2ff;
+    border-radius: 20px;
+    font-family: papyrus;
+     box-shadow: 5px 4px 3px #000000;
+}
+
+.container h4 {
+    font-size: 30px;
+    text-decoration:underline;
+    color: bisque;
+}
+
+.container ol li {
+    border:bisque 10px solid ;
+    background: rgb(253, 213, 163);
+    font-family: papyrus;
+     box-shadow: 5px 4px 3px #000000;
+}
+
+.links a {
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 22px;
+    color: green;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    font-size: 25px;
+    color: lightskyblue;
+}
