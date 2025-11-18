@@ -19,7 +19,7 @@ body {
     margin-bottom: 25px;
     font-size: 28px;
     font-weight: bold;
-    color: #d603c1;
+    color: #ffe600;
     letter-spacing: 1px;
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 .group input:focus {
-    border-color: #4c6ef5;
+    border-color: #ff4314;
     box-shadow: 0px 0px 5px rgba(76,110,245,0.4);
     outline: none;
 }
@@ -64,7 +64,7 @@ button {
     width: 100%;
     margin-top: 10px;
     padding: 12px;
-    background: #d603c1;
+    background: #03d615;
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -75,7 +75,7 @@ button {
 }
 
 .group button:hover {
-    background: #364fc7;
+    background: #c73636;
 }
 
 /* LISTA DE CONTATOS */
@@ -91,7 +91,7 @@ button {
     margin-bottom: 12px;
     border-radius: 12px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    border-left: 6px solid #4c6ef5;
+    border-left: 6px solid #f54c4c;
     display: flex;
     flex-direction: column;
     gap: 4px;
