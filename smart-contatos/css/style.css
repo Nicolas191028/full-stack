@@ -55,9 +55,9 @@ body {
 }
 
 .group input:focus {
-    border-color: #ff4314;
-    box-shadow: 0px 0px 5px rgba(76,110,245,0.4);
+    box-shadow: 0px 0px 5px rgb(255, 232, 157);
     outline: none;
+    border: 2px solid #ffdb78;
 }
 
 button {

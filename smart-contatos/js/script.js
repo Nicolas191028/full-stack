@@ -3,6 +3,8 @@ const lista = document.querySelector(".lista")
 const inputNome = document.getElementById("nome");
 const inputEmail = document.getElementById("email");
 const inputTelefone = document.getElementById("telefone");
+const listaMsg = document.querySelector(".lista-msg");
+
 
 form.addEventListener("submit", function(event) {
     event.preventDefault(); 
@@ -11,6 +13,12 @@ form.addEventListener("submit", function(event) {
         alert("Digite todos os campos");
 
         return false;
+    }
+
+    // Condição, para retirar a li > .lista-msg
+    // se (listaMsg === true) 
+    if (listaMsg) {
+        listaMsg.remove(listaMsg);
     }
 
     // Criar LI
