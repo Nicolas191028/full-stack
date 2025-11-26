@@ -11,6 +11,16 @@ const nomes = [
   { id: 5, nome: "Doris", idade: "33" },
 ];
 
+// Criando Funções Auxiliares
+// Retornar o objeto por Id
+function buscarNomePorId(id) {
+    return nomes.filter((nome) => nome.id == id)
+}
+
+app.get("/", (req, res) => {
+    res.send("Olá mundo!")
+})
+
 // Rota teste
 app.get("/teste", (req, res) => {
     res.send("API nodePeople está funcionando!");
@@ -19,6 +29,13 @@ app.get("/teste", (req, res) => {
 // Buscando nomes (listaNomes)
 app.get("/listaNomes", (req, res) => {
     res.send(nomes);
+});
+
+// Buscando por ID
+app.get("/listaNomes/:id", (req, res) => {
+    let index = req.params.id;
+
+    res.json(buscarNomePorId(index))
 });
 
 app.listen(PORT, () => {
