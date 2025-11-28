@@ -112,6 +112,24 @@ app.delete("/times/:id", (req, res) => {
     res.send(`Time com id ${req.params.id} excluida com sucesso`);
 });
 
+// Rota alterar
+app.put("/listaNomes/:id", (req, res) => {
+    let index = buscarIdNomes(req.params.id);
+    nomes[index].nome = req.body.nome;
+    nomes[index].idade = req.body.idade;
+
+    res.json(nomes);
+});
+
+app.put("/times/:id", (req, res) => {
+    let index = buscarIdTimes(req.params.id);
+    times[index].nome = req.body.nome;
+    times[index].estado = req.body.estado;
+    times[index].titulos = req.body.titulos;
+
+    res.json(times);
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor rodando no endereço http://localhost:${PORT}`);
 });
