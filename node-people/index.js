@@ -87,15 +87,29 @@ app.post("/times", (req, res) => {
 
 // Criando Rota Excluir
 app.delete("/listaNomes/:id", (req, res) => {
-    let index = buscarIdNomes(req.params.id);
+    let id = req.params.id;
+    let index = buscarIdNomes(id);
+
+    // se não encontrar, retorna erro
+    if (index === -1) {
+        return res.status(404).send(`Nenhum nome com id ${id} foi encontrado`)
+    } 
+
     nomes.splice(index, 1);
     res.send(`Nomes com id ${req.params.id} excluida com sucesso`);
 });
 
 app.delete("/times/:id", (req, res) => {
-    let index = buscarIdTimes(req.params.id);
+    let id = req.params.id;
+    let index = buscarIdTimes(id);
+
+    if (index === -1) {
+        return res.status(404).send(`Nenhum time com id ${id} foi encontrado`)
+    } 
+
+
     times.splice(index, 1);
-    res.send(`Times com id ${req.params.id} excluida com sucesso`);
+    res.send(`Time com id ${req.params.id} excluida com sucesso`);
 });
 
 app.listen(PORT, () => {
