@@ -83,6 +83,6 @@ app.put("/listaCadastros/:id", (req, res) => {
     cadastros[index].endereco = req.body.endereco;
 
     res.json(cadastros);
-});
+}); 
 
 export default app;
