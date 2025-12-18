@@ -22,7 +22,7 @@ const times = [
 // Criar função 
 // Rota principal
 app.get('/', (req, res) => {
-    res.send('Bem Vindo ao servidor Node.js ');
+    res.send('BEM VINDO A COPA DO MUNDO!');
 });
 
 //Rota de produto

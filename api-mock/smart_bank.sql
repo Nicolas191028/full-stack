@@ -21,4 +21,3 @@ insert into dados (nome, idade, email, telefone, cpf, endereco) values
 	("Davi Jones", "21", "DevJones@orutos.com", "454542525", "454.454.545.54", "Rua Cotia");
 
 select * from dados;
-    
